@@ -1,7 +1,3 @@
-function greet() {
-    console.log("Hello from external script!"); 
-}
-greet(); 
 //write a function that randomly returns 'rock' 'paper' or 'scissors' 
 function getComputerChoice() {
 var choice = Math.floor(Math.random()  * 3);
@@ -14,6 +10,7 @@ if (choice === 0) {
 }
 }
 console.log(getComputerChoice()); 
+
 //create function named getComputerChoice 
 //write the code so that getComputerChoice will randomly return one of the following
 //string values: "rock" "paper" or "scissors" 
@@ -28,5 +25,9 @@ console.log(getComputerChoice());
 //test what your function returns by using console.log
 
 function getHumanChoice() {
-    
+    var userInput = prompt("enter rock, paper, or scissors:");
+    return userInput;
+}
+window.onload = function() {
+    console.log(getHumanChoice());
 }
