@@ -31,3 +31,10 @@ function getHumanChoice() {
 window.onload = function() {
     console.log(getHumanChoice());
 }
+//Declare the players score variables:
+//your game will keep track of the players score. You will write variables
+//to keep track of the players score.
+
+//create two new variables named humanScore and computerScore in the global scope
+//initialize those variables with the value of 0. 
+
