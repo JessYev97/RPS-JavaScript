@@ -37,4 +37,5 @@ window.onload = function() {
 
 //create two new variables named humanScore and computerScore in the global scope
 //initialize those variables with the value of 0. 
-
+let humanScore = 0;
+let computerScore = 0;
