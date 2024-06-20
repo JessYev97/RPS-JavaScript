@@ -56,6 +56,16 @@ function playRound(humanChoice, computerChoice) {
     // your code here!
     humanChoice = getHumanChoice;
     computerChoice = getComputerChoice;
+    //make a string to be returned for paper beats rock
+    //make a string to be returned for rock beats scissors
+    //make a string to be returned for scissors beats paper
+    //make a string to be returned for scissors ties with scissors
+    //make a string to be returned for paper ties with paper
+    //make a string to be returned for rock ties with rock 
+    //make a string to be returned for rock loses to paper
+    //make a string to be returned for paper loses to scissors 
+    //make a string to be returned for scissors loses to rock
+    
   }
 
   const humanSelection = getHumanChoice();
