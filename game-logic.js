@@ -1,6 +1,6 @@
 //write a function that randomly returns 'rock' 'paper' or 'scissors' 
 function getComputerChoice() {
-var choice = Math.floor(Math.random()  * 3);
+let choice = Math.floor(Math.random()  * 3);
 if (choice === 0) { 
     return 'rock';
 } else if (choice === 1) {
@@ -25,7 +25,7 @@ console.log(getComputerChoice());
 //test what your function returns by using console.log
 
 function getHumanChoice() {
-    var userInput = prompt("enter rock, paper, or scissors:");
+    let userInput = prompt("enter rock, paper, or scissors:");
     return userInput;
 }
 window.onload = function() {
@@ -54,8 +54,9 @@ let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
     // your code here!
+    console.log(humanChoice.toLowerCase());
   }
-  
+
   const humanSelection = getHumanChoice();
   const computerSelection = getComputerChoice();
   
