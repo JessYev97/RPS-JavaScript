@@ -51,3 +51,13 @@ let computerScore = 0;
 //write the code for your playRound function to console.log a string value representing the 
 // round winner, such as "You lose! Paper beats Rock!".
 //increment the humanScore or computerScore variable based on the round winner. 
+
+function playRound(humanChoice, computerChoice) {
+    // your code here!
+  }
+  
+  const humanSelection = getHumanChoice();
+  const computerSelection = getComputerChoice();
+  
+  playRound(humanSelection, computerSelection);
+  
