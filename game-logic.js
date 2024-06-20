@@ -54,7 +54,8 @@ let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
     // your code here!
-    console.log(humanChoice.toLowerCase());
+    humanChoice = getHumanChoice;
+    computerChoice = getComputerChoice;
   }
 
   const humanSelection = getHumanChoice();
