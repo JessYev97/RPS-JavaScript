@@ -39,3 +39,15 @@ window.onload = function() {
 //initialize those variables with the value of 0. 
 let humanScore = 0;
 let computerScore = 0;
+
+//create new function named playRound.
+
+//define two parameters for playRound: humanChoice and computerChoice. Use these two 
+//parameters to to take the human and computer choices as arguments 
+
+//make your functions human choice parameter case-insinsitive so that players can
+// input variations of "rock" "ROck" etc. 
+
+//write the code for your playRound function to console.log a string value representing the 
+// round winner, such as "You lose! Paper beats Rock!".
+//increment the humanScore or computerScore variable based on the round winner. 
