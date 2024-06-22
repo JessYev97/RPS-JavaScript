@@ -29,7 +29,7 @@ function getHumanChoice() {
     return userInput;
 }
 window.onload = function() {
-    console.log(getHumanChoice());
+    console.log(getHumanChoice()); 
 }
 //Declare the players score variables:
 //your game will keep track of the players score. You will write variables
@@ -65,11 +65,31 @@ function playRound(humanChoice, computerChoice) {
     //make a string to be returned for rock loses to paper
     //make a string to be returned for paper loses to scissors 
     //make a string to be returned for scissors loses to rock
-    
+    if (humanChoice === "paper" && computerChoice === "rock") { 
+        return "paper beats rock, you win!";
+
+     } else if (humanChoice === "rock" && computerChoice === "scissors") { 
+        return "rock beats scissors, you win!";
+     } else if (humanChoice === "scissors" && computerChoice === "paper") {
+        return "scissors beat paper, you win!";
+     } else if (humanChoice === "scissors" && computerChoice === "scissors") {
+        return "scissors ties with scissors!";
+     } else if (humanChoice === "paper" && computerChoice === "paper") {
+        return "paper ties with paper!"; 
+     } else if (humanChoice === "rock" && computerChoice === "rock") {
+        return "rock ties with rock!"
+     } else if (humanChoice === "rock" && computerChoice === "paper") {
+        return "rock loses to paper, try again!"; 
+     } else if (humanChoice === "paper" && computerChoice === "scissors") {
+      return "paper loses to scissors, try again!"; 
+     }
+
   }
+  // alright: while reading up on the || or I am thinking I may use it to connect all of the 
+  // possible win scenarios to a "string" 
+  // and all of the possible losses in their own OR || checks. Noting this to come back to. 
 
   const humanSelection = getHumanChoice();
   const computerSelection = getComputerChoice();
   
   playRound(humanSelection, computerSelection);
-  
