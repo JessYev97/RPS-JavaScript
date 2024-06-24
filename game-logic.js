@@ -22,6 +22,16 @@ function getHumanChoice() {
 }
 //initializing variables to 0 for humanScore and computerScore to keep track
 //of the players score (in the global scope)
-
+//moving on to playRound. The Odin Project gives us some example code here:
+function playRound(humanChoice, computerChoice) {
+   // your code here! - thinking.
+   
+ }
+ 
+ const humanSelection = getHumanChoice();
+ const computerSelection = getComputerChoice();
+ 
+ playRound(humanSelection, computerSelection);
+ 
 
  
