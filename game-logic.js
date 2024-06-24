@@ -10,9 +10,10 @@ if (choice === 0) {
 }
 }
 console.log(getComputerChoice()); 
-//next it's time for getHumanChoice. it should return a value of "rock" "paper" or "scissors"
+//next it's time for getHumanChoice. it should return a value of "rock" "paper" or "scissor s"
 function getHumanChoice() {
    let humanInput = prompt("enter 'rock', 'paper' or 'scissors'"); 
-   
- }
+   console.log(humanInput) 
+   //it worked! wooo! happy times. Okay, commit then moving on. 
+}
  
