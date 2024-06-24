@@ -1,3 +1,7 @@
+
+let humanScore = 0;
+let computerScore = 0;
+
 //write a function that randomly returns 'rock' 'paper' or 'scissors' 
 function getComputerChoice() {
 let choice = Math.floor(Math.random()  * 3);
@@ -16,4 +20,8 @@ function getHumanChoice() {
    console.log(humanInput) 
    //it worked! wooo! happy times. Okay, commit then moving on. 
 }
+//initializing variables to 0 for humanScore and computerScore to keep track
+//of the players score (in the global scope)
+
+
  
