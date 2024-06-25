@@ -1,43 +1,46 @@
 
-let humanScore = 0;
-let computerScore = 0;
-const humanSelection = getHumanChoice();
- const computerSelection = getComputerChoice();
- 
+//let humanScore = 0;
+//let computerScore = 0;
+//const humanSelection = getHumanChoice();
+ //const computerSelection = getComputerChoice();
+ //after some research I found a better way to declare the choices above:
+const options = ["rock", "paper", "scissors"];
  playRound(humanSelection, computerSelection);
-
 //write a function that randomly returns 'rock' 'paper' or 'scissors' 
 function getComputerChoice() {
-let choice = Math.floor(Math.random()  * 3);
-if (choice === 0) { 
+const randomNum = Math.floor(Math.random()  * 3);
+if (randomNum === 0) { 
     return 'rock';
-} else if (choice === 1) {
+} else if (randomNum === 1) {
     return 'paper';
 } else {
     return 'scissors';
 }
 }
 console.log(getComputerChoice()); 
-//next it's time for getHumanChoice. it should return a value of "rock" "paper" or "scissor s"
+//getHumanChoice should return a value of "rock" "paper" or "scissors"
 function getHumanChoice() {
-   let humanInput = prompt("enter 'rock', 'paper' or 'scissors'"); 
-   console.log(humanInput) 
-   //it worked! wooo! happy times. Okay, commit then moving on. 
+   const humanInput = prompt("enter 'rock', 'paper' or 'scissors'"); 
+   return humanInput.toLowerCase();
+  // it worked! wooo! happy times. Okay, commit then moving on. 
 }
 //initializing variables to 0 for humanScore and computerScore to keep track
 //of the players score (in the global scope)
-//moving on to playRound. The Odin Project gives us some example code here:
-function playRound(humanChoice, computerChoice) {
+function playRound(humanInput, computerChoice) {
    // your code here! - thinking.
-   humanChoice = humanSelection;
+   humanInput = humanSelection;
    computerChoice = computerSelection; 
-   //the above code is to give arguments to playRound from the global scope. May need
-   //to revisit this. So far it is working. I am thinking about the round arguments now. 
-   
+   //the above code is to give arguments to playRound from the global scope.
+   if (humanInput === 'rock' && computerChoice === 'scissors') {
+    return "You win!";
+   } else {
+    return "not a win, try again!";
+   }
  }
- 
+ console.log(playRound(humanInput, computerSelection)); 
  //starting with the win arguments; logging one string for all human win scenarios
 
  
 
  
+
