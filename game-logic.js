@@ -1,6 +1,10 @@
 
 let humanScore = 0;
 let computerScore = 0;
+const humanSelection = getHumanChoice();
+ const computerSelection = getComputerChoice();
+ 
+ playRound(humanSelection, computerSelection);
 
 //write a function that randomly returns 'rock' 'paper' or 'scissors' 
 function getComputerChoice() {
@@ -25,13 +29,15 @@ function getHumanChoice() {
 //moving on to playRound. The Odin Project gives us some example code here:
 function playRound(humanChoice, computerChoice) {
    // your code here! - thinking.
+   humanChoice = humanSelection;
+   computerChoice = computerSelection; 
+   //the above code is to give arguments to playRound from the global scope. May need
+   //to revisit this. So far it is working. I am thinking about the round arguments now. 
    
  }
  
- const humanSelection = getHumanChoice();
- const computerSelection = getComputerChoice();
- 
- playRound(humanSelection, computerSelection);
+ //starting with the win arguments; logging one string for all human win scenarios
+
  
 
  
