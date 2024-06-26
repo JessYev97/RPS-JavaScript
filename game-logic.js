@@ -28,4 +28,16 @@ function checkWinner(playerSelection, computerSelection){
         return "Computer";
     }
 }
+function playRound(playerSelection, computerSelection){ 
+  const result = checkWinner(playerSelection, computerSelection);
+  if(result == "Tie"){
+      return "It's a tie!"
+  }
+  else if(result == "Player"){
+      return `You win! ${playerSelection} beats ${computerSelection}`
+  }
+  else{
+      return `You lose! ${computerSelection} beats ${playerSelection}`
+  }
+}
 
