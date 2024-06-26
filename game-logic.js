@@ -11,7 +11,8 @@ function getComputerChoice() {
     //here I now need to tie in the new options const defined above:
     const choice = options [Math.floor(Math.random()  * options.length)];
     //above I changed the code; before it was * 3; this worked but this method's more intuitive
-    return choice; 
+   // return choice; 
+   console.log(getComputerChoice);
 }
 getComputerChoice();
 //here I was on the right track but since I have changed the code to options above I'll 
@@ -26,11 +27,11 @@ getComputerChoice();
 //}
 //console.log(getComputerChoice()); 
 //getHumanChoice should return a value of "rock" "paper" or "scissors"
-//function getHumanChoice() {
-  // const humanInput = prompt("enter 'rock', 'paper' or 'scissors'"); 
-   //return humanInput.toLowerCase();
+function getHumanChoice() {
+   const humanInput = prompt("enter 'rock', 'paper' or 'scissors'"); 
+   return humanInput.toLowerCase();
   // it worked! wooo! happy times. Okay, commit then moving on. 
-//}
+}
 //initializing variables to 0 for humanScore and computerScore to keep track
 //of the players score (in the global scope)
 //function playRound(humanInput, computerChoice) {
