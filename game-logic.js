@@ -13,4 +13,19 @@ function getComputerChoice() {
     //above I changed the code; before it was * 3; this worked but this method's more intuitive
     return choice; 
 }
-//sigh. I got confused again. This is the second big reset. 
+function checkWinner(playerSelection, computerSelection){
+    if (playerSelection == computerSelection){
+        return "Tie"; 
+    } 
+    else if(
+        (playerSelection == "rock" && computerSelection == "scissors") || 
+    (playerSelection == "scissors" && computerSelection == "paper") ||
+    (playerSelection == "paper" && computerSelection == "rock")
+    ){
+        return "Player";
+    }
+    else {
+        return "Computer";
+    }
+}
+
