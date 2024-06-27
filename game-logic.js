@@ -57,11 +57,29 @@ function getPlayerChoice(){
 } 
 
 function game(){
-  console.log("Welcome!")
-  for (let i = 0; i < 5; i++) {
-    const playerSelection = getPlayerChoice();
-    const computerSelection = getComputerChoice();
-    console.log(playRound(playerSelection, computerSelection));
+    let scorePlayer = 0;
+    let scoreComputer = 0;
+    console.log("Welcome!")
+    for (let i = 0; i < 5; i++) {
+      const playerSelection = getPlayerChoice();
+      const computerSelection = getComputerChoice();
+      console.log(playRound(playerSelection, computerSelection));
+      console.log("------------");
+      if (checkWinner(playerSelection, computerSelection) == "Player"){
+        scorePlayer ++;
+      }
+      else if (checkWinner(playerSelection, computerSelection) == "Computer"){
+        scoreComputer ++;
+      }
+    }
+  console.log(" Game Over")
+  if (scorePlayer > scoreComputer){
+    console.log("You won the game! Congrats and play again if you want!");
+  }
+  else if(scorePlayer < scoreComputer){
+    console.log("oof, computer won. You can try again if you'd like!");
+  } else{
+    console.log("It was a tie! Play again if you think you can win!"); 
   }
 }
-game()
+game() 
