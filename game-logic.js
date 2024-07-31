@@ -56,17 +56,14 @@ function playRound(playerSelection, computerSelection){
       return "It's a tie!";
   }
   else if(result == "Player"){
-    /*let newScore = parseInt(document.getElementById("yourScore").innerHTML);
-  scorePlayer = newScore +1;
- document.getElementById("yourScore").innerHTML = newScore; */
   scorePlayer = scorePlayer +1;
-  document.getElementById("yourScore").innerText = scorePlayer;
+  document.getElementById("yourScore").innerText = `Player score: ${scorePlayer}`;
       return `You win! ${playerSelection} beats ${computerSelection}`; 
       
   }
   else{
     scoreComputer = scoreComputer +1; 
-    document.getElementById("compScore").innerText = scoreComputer;
+    document.getElementById("compScore").innerText = `Computer score: ${scoreComputer}`; 
       return `You lose! ${computerSelection} beats ${playerSelection}`; 
       
   }
@@ -103,14 +100,22 @@ rockButton.addEventListener("click", function(){
   document.getElementById("computerSelection").textContent =`computer chose ${computerSelection}`; 
   //game();
   console.log("Result:", result);
-  /*if (result.includes("Player")) {
-    scorePlayer++; 
-  } else if (result.includes("Computer")) {
-    scoreComputer++; 
-  }
-  document.getElementById("yourScore").textContent= `Your score: ${scorePlayer}`;
-  document.getElementById("compScore").textContent= `Computer score: ${scoreComputer}`;
-  //eListener(); */
-  //game(); 
-  
+});
+
+paperButton.addEventListener("click", function(){
+  const playerSelection = "paper";
+  const result = playRound(playerSelection, computerSelection);
+  document.getElementById("result").textContent = result;
+  document.getElementById("playerSelection").textContent = `You chose ${playerSelection}` 
+  document.getElementById("computerSelection").textContent =`computer chose ${computerSelection}`; 
+ // game();
+}); 
+
+scissorsButton.addEventListener("click", function(){
+  const playerSelection = "scissors"; 
+  const result = playRound(playerSelection, computerSelection);
+  document.getElementById("result").textContent = result;
+  document.getElementById("playerSelection").textContent = `You chose ${playerSelection}` 
+  document.getElementById("computerSelection").textContent =`computer chose ${computerSelection}`; 
+  //game();
 });
