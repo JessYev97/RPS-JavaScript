@@ -1,14 +1,3 @@
-const rockButton = document.getElementById("Rock");
-document.body.appendChild(rockButton); 
-
-
-const paperButton = document.getElementById("Paper");
-document.body.appendChild(paperButton);
-
-
-const scissorsButton = document.getElementById("Scissors");
-document.body.appendChild(scissorsButton); 
-
 let result = document.getElementById("result");
 document.body.appendChild(result);
 let scorePlayer = document.getElementById("yourScore");
@@ -16,106 +5,104 @@ document.body.appendChild(yourScore);
 let scoreComputer = document.getElementById("compScore");
 document.body.appendChild(compScore); 
 
-
- scorePlayer = 0;
- scoreComputer = 0; 
- 
-
-
 const options = ["rock", "paper", "scissors"];
+  scorePlayer = 0;
+  scoreComputer = 0; 
+ let rounds = 0;
 
  function getComputerChoice() {
     const choice = options [Math.floor(Math.random()  * options.length)];
     return choice;     
-    //do I put a DOM method here too? seems it's working 
 }
-
- const computerSelection = getComputerChoice(); 
+ let computerSelection = getComputerChoice(); 
  
  function checkWinner(playerSelection, computerSelection){
-  if (playerSelection == computerSelection){
+  rounds++; 
+  console.log(rounds); 
+  if (playerSelection === computerSelection){
       return "Tie"; 
   } 
   else if(
-      (playerSelection == "rock" && computerSelection == "scissors") || 
-  (playerSelection == "scissors" && computerSelection == "paper") ||
-  (playerSelection == "paper" && computerSelection == "rock")
+      (playerSelection === "rock" && computerSelection === "scissors") || 
+  (playerSelection === "scissors" && computerSelection === "paper") ||
+  (playerSelection === "paper" && computerSelection === "rock")
   ){
       return "Player";
-  }
-  else {
+  }else {
       return "Computer";
+      
   }
 }
-
 function playRound(playerSelection, computerSelection){ 
-   result = checkWinner(playerSelection, computerSelection);
-  if(result == "Tie"){
-      //not even sure if the following line should be here 
-      document.getElementById("result").textContent= "It's a tie";
-      return "It's a tie!";
+  
+  if (rounds === 5) {
+    if (scorePlayer > scoreComputer) {
+     return "You win the game!";
+    } else if (scorePlayer < scoreComputer) {
+     return "Computer wins the game";
+    } else {
+      return "no winner for the game"; 
+    }
   }
-  else if(result == "Player"){
-  scorePlayer = scorePlayer +1;
+  const result = checkWinner(playerSelection, computerSelection);
+  if(result === "Player"){
+  scorePlayer++;
   document.getElementById("yourScore").innerText = `Player score: ${scorePlayer}`;
-      return `You win! ${playerSelection} beats ${computerSelection}`; 
-      
   }
-  else{
-    scoreComputer = scoreComputer +1; 
-    document.getElementById("compScore").innerText = `Computer score: ${scoreComputer}`; 
-      return `You lose! ${computerSelection} beats ${playerSelection}`; 
-      
+  else if (result === "Computer"){
+    scoreComputer++; 
+    document.getElementById("compScore").innerText = `Computer score: ${scoreComputer}`;  
   }
+  if (rounds === 5) {
+    // Disable the buttons
+    rockButton.disabled = true;
+    paperButton.disabled = true;
+    scissorsButton.disabled = true;
+  }
+  return result; 
+  
 }
 
-
-function game(){
-   scorePlayer = 0;
-   scoreComputer = 0; 
-    {
-     
-    const result = playRound(playerSelection, computerSelection); 
-    result.textContent = result; 
-    if (checkWinner(playerSelection, computerSelection) == "Player"){
-      //scorePlayer ++;
-      getElementById("yourScore") ++; 
-      
-    }
-    else if (checkWinner(playerSelection, computerSelection) == "Computer"){
-      //scoreComputer ++;
-      getElementById("compScore") ++; 
-      
-    }
-     // displayGameResult(result); 
-  } 
-} 
-
+const rockButton = document.getElementById("Rock");
 rockButton.addEventListener("click", function(){
   const playerSelection = "rock";
-  //playRound(playerSelection, computerSelection);
+   const computerSelection = getComputerChoice(); 
   const result = playRound(playerSelection, computerSelection);
   document.getElementById("result").textContent = result;
-  document.getElementById("playerSelection").textContent = `You chose ${playerSelection}` 
+  document.getElementById("playerSelection").textContent = `You chose ${playerSelection}`;
   document.getElementById("computerSelection").textContent =`computer chose ${computerSelection}`; 
-  //game();
-  console.log("Result:", result);
 });
-
+const paperButton = document.getElementById("Paper");
 paperButton.addEventListener("click", function(){
   const playerSelection = "paper";
+   const computerSelection = getComputerChoice(); 
   const result = playRound(playerSelection, computerSelection);
   document.getElementById("result").textContent = result;
   document.getElementById("playerSelection").textContent = `You chose ${playerSelection}` 
   document.getElementById("computerSelection").textContent =`computer chose ${computerSelection}`; 
- // game();
 }); 
-
+const scissorsButton = document.getElementById("Scissors");
 scissorsButton.addEventListener("click", function(){
   const playerSelection = "scissors"; 
+  const computerSelection = getComputerChoice(); 
   const result = playRound(playerSelection, computerSelection);
   document.getElementById("result").textContent = result;
-  document.getElementById("playerSelection").textContent = `You chose ${playerSelection}` 
+  document.getElementById("playerSelection").textContent = `You chose ${playerSelection}`;
   document.getElementById("computerSelection").textContent =`computer chose ${computerSelection}`; 
-  //game();
 });
+
+const resetBtn = document.getElementById("resetGame");
+resetBtn.addEventListener("click", function(){
+  scorePlayer = 0;
+  scoreComputer = 0;
+  rounds = 0;
+  document.getElementById("result").textContent = "";
+  document.getElementById("playerSelection").textContent = "";
+  document.getElementById("computerSelection").textContent = ""; 
+  document.getElementById("yourScore").textContent = "Player score:";
+  document.getElementById("compScore").textContent = "Computer score:"; 
+
+rockButton.disabled = false;
+paperButton.disabled = false;
+scissorsButton.disabled = false;
+})
